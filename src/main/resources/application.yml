@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: class_booking
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/class_booking_db
+    username: postgres
+    password: Karan7651
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate # Hum Flyway use kar rahe hain, isliye hibernate ko table banane se rok diya
+    show-sql: true # Console me SQL queries dekhne ke liye
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC # Hamesha database me UTC save karne ke liye
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: 8080
