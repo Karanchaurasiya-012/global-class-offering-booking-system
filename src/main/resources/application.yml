@@ -10,13 +10,13 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate # Hum Flyway use kar rahe hain, isliye hibernate ko table banane se rok diya
-    show-sql: true # Console me SQL queries dekhne ke liye
+      ddl-auto: validate 
+    show-sql: true 
     properties:
       hibernate:
         format_sql: true
         jdbc:
-          time_zone: UTC # Hamesha database me UTC save karne ke liye
+          time_zone: UTC
 
   flyway:
     enabled: true
