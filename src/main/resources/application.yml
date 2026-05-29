@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/class_booking_db
-    username: postgres
-    password: Karan7651
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:your_password}
     driver-class-name: org.postgresql.Driver
 
   jpa:
