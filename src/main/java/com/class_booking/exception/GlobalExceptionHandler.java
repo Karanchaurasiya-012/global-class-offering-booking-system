@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestControllerAdvice
+// YAHAN MAIN FIX HAI: Ab yeh sirf tumhare controller package ki errors ko catch karega, Swagger ki nahi.
+@RestControllerAdvice(basePackages = "com.class_booking.controller")
 public class GlobalExceptionHandler {
 
     // Handles 404 Not Found
@@ -46,6 +47,9 @@ public class GlobalExceptionHandler {
     // Handles all other generic errors (500 Internal Server Error)
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, String>> handleGenericException(Exception ex) {
+        // Yeh line console me error print karegi taki debug karna aasan ho!
+        ex.printStackTrace(); 
+        
         Map<String, String> error = new HashMap<>();
         error.put("error", "Internal Server Error");
         error.put("message", ex.getMessage());
